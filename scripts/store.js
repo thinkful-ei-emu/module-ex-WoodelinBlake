@@ -19,3 +19,4 @@ const store = (function(){
   };
 }());
 
+//store.items.push(Item(cereal, ))

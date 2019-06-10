@@ -1,6 +1,11 @@
-const Item = (function(){
+/* eslint-disable strict */
+'usestrict';
 
-    return {id: cuid(), name, checked: false };
-  }());
+const Item = (function(){
+  let item = function newItem(name, checked){
+    return {id: cuid(), name, checked};
+  }
+  return item;
+}());
 
  
