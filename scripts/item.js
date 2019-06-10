@@ -3,10 +3,16 @@
 
 const Item = (function(){
   function validateName(name){
-    if(typeof(name) === 'undefined' ){
-      throw TypeError('name does not exist');
-    }
+    if(name === 'undefined' ){
+      throw ('name does not exist');
    }
+    }
+    try {
+      validateName('undefined');
+    }
+    catch(e){
+      console.log(e);
+    }
     function create(name){
     return {
         id: cuid(), name(name)
