@@ -3,6 +3,7 @@
 
 const Item = (function(){
   function validateName(name){
+<<<<<<< HEAD
     if(name === 'undefined' ){
       throw ('name does not exist');
    }
@@ -17,16 +18,22 @@ const Item = (function(){
     return {
         id: cuid(), name(name)
   
+=======
+    if(typeof(name) === 'undefined' ){
+      throw TypeError('name does not exist');
+>>>>>>> 611f595830c78d5e9afd2d4a91c7043ff9c77145
     }
   }
-  
-  let item = function newItem(name, checked){
+ 
+  function create(name){
     validateName(name);
-    return {id: cuid(), name, checked};
+    return {id: cuid(), name, checked: false}
   }
-  return item;
-
   
+  return {
+    validateName: validateName(),
+    create: create()
+  };
 }());
 
 
