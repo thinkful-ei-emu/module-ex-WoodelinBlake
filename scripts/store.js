@@ -21,11 +21,28 @@ const store = (function(){
 
     addItem: function(name){
       const newItem = Item.create(name);
-      this.items.push(newItem);
-      console.log(this.items.push(newItem));
+      this.items.push(newItem);  
+    },
+
+    findAndToggleChecked: function(id){
+      this.findByID();
+      
+    },
+
+    findAndUpdateName: function(id,newName){
+      try{ 
+        Item.validateName(findByID(id));
+        const object = this.findByID(id);
+        object.name = newName;
+      } 
+      catch(error){console.log('Cannot update name:{error.message}')}
+    },
+
+    findAndDelete: function(id){
+      
+      // newItem = this.items.filter(object => object.id = id) 
+      delete this.items.indexOf(object => object.id = id);
     }
-
-
 
   };
 }());

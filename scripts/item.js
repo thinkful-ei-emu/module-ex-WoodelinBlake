@@ -20,8 +20,8 @@ const Item = (function(){
   }
   
   return {
-    validateName: validateName(),
-    create: create()
+    validateName: validateName,
+    create: create
   };
 }());
 

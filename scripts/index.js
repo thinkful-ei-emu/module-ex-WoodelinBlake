@@ -22,7 +22,9 @@ function main() {
 
 $(main);
 
-// store.addItem('cheese');
+store.addItem('bananas');
+store.findAndDelete(store.items[0].id);
+shoppingList.render();
 
 
 
