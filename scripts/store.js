@@ -16,7 +16,7 @@ const store = (function(){
     hideCheckedItems: false,
     searchTerm: '',
     findByID: function(id){
-        return this.items.find(object =>  object.id === id);
+      return this.items.find(object =>  object.id === id);
     },
 
     addItem: function(name){
@@ -25,23 +25,19 @@ const store = (function(){
     },
 
     findAndToggleChecked: function(id){
-      this.findByID();
-      
+      const obj = this.findByID(id);
+      obj.checked = !obj.checked;
     },
 
-    findAndUpdateName: function(id,newName){
-      try{ 
-        Item.validateName(findByID(id));
-        const object = this.findByID(id);
-        object.name = newName;
-      } 
-      catch(error){console.log('Cannot update name:{error.message}')}
+    findAndUpdateName: function(id, newName){
+      Item.validateName(this.findByID(id));
+      const object = this.findByID(id);
+      object.name = newName;
+      console.log('name updated');
     },
 
     findAndDelete: function(id){
-      
-      // newItem = this.items.filter(object => object.id = id) 
-      delete this.items.indexOf(object => object.id = id);
+      this.items = this.items.filter(obj => obj.id !== id);
     }
 
   };
