@@ -22,5 +22,5 @@ function main() {
 $(main);
 //main();
 
-store.items.push(Item('banana', false));
+store.items.push(Item('', false));
 console.log(store.items);
