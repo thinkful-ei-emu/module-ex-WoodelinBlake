@@ -22,7 +22,7 @@ function main() {
 
 $(main);
 //main();
-
+/*
 const itemNames = [ '', 'apples', 'pears' ];
 itemNames.forEach(name => {
   try {
@@ -33,3 +33,4 @@ itemNames.forEach(name => {
   }
 });
 shoppingList.render();
+*/

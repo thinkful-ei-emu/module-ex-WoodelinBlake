@@ -38,6 +38,7 @@ const shoppingList = (function(){
   function render() {
     // Filter item list if store prop is true by item.checked === false
     let items = [ ...store.items ];
+    console.log(items);
     if (store.hideCheckedItems) {
       items = items.filter(item => !item.checked);
     }
@@ -54,18 +55,17 @@ const shoppingList = (function(){
     // insert that HTML into the DOM
     $('.js-shopping-list').html(shoppingListItemsString);
   }
-  
-  
-  function addItemToShoppingList(itemName) {
-    store.items.push({ id: cuid(), name: itemName, checked: false });
-  }
+
   
   function handleNewItemSubmit() {
     $('#js-shopping-list-form').submit(function (event) {
       event.preventDefault();
       const newItemName = $('.js-shopping-list-entry').val();
       $('.js-shopping-list-entry').val('');
-      addItemToShoppingList(newItemName);
+      console.log(Item);
+      const newItem = Item.create(newItemName);
+      console.log(newItem);
+      store.items.push(newItem);
       render();
     });
   }
@@ -156,6 +156,7 @@ const shoppingList = (function(){
   }
 
   // This object contains the only exposed methods from this module:
+  console.log(store.items);
   return {
     render,
     bindEventListeners

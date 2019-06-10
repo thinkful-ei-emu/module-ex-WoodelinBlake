@@ -1,5 +1,6 @@
+/* eslint-disable no-undef */
 /* eslint-disable strict */
-'usestrict';
+'use strict';
 
 const Item = (function(){
   function validateName(name){
@@ -16,12 +17,13 @@ const Item = (function(){
  
   function create(name){
     validateName(name);
-    return {id: cuid(), name, checked: false}
+    return {id: cuid(), name, checked: false};
+    
   }
   
   return {
-    validateName: validateName(),
-    create: create()
+    validateName: validateName,
+    create: create
   };
 }());
 

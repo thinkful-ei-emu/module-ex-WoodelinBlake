@@ -14,7 +14,14 @@ const store = (function(){
       { id: cuid(), name: 'bread', checked: false }
     ],
     hideCheckedItems: false,
-    searchTerm: ''
+    searchTerm: '',
+    findByID: function(){
+
+    }
+
+
+
+
   };
 }());
 
