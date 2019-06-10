@@ -1,5 +1,12 @@
 'use strict';
-const STORE = (function(){
+
+
+
+
+const store = (function(){
+
+  const foo = 'bar';
+
   return {
     items: [
       { id: cuid(), name: 'apples', checked: false },
@@ -11,3 +18,4 @@ const STORE = (function(){
     searchTerm: ''
   };
 }());
+
