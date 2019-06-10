@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 'use strict';
 /* global shoppingList, cuid */
 
@@ -22,5 +23,13 @@ function main() {
 $(main);
 //main();
 
-store.items.push(Item('', false));
-console.log(store.items);
+const itemNames = [ '', 'apples', 'pears' ];
+itemNames.forEach(name => {
+  try {
+    Item.validateName(name);
+    store.items.push(Item.create(name));
+  } catch(error) {
+    console.log('Cannot add item: ' + error.message);
+  }
+});
+shoppingList.render();

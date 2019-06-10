@@ -6,21 +6,17 @@ const Item = (function(){
     if(typeof(name) === 'undefined' ){
       throw TypeError('name does not exist');
     }
-   }
-    function create(name){
-    return {
-        id: cuid(), name(name)
-  
-    }
   }
-  
-  let item = function newItem(name, checked){
+ 
+  function create(name){
     validateName(name);
-    return {id: cuid(), name, checked};
+    return {id: cuid(), name, checked: false}
   }
-  return item;
-
   
+  return {
+    validateName: validateName(),
+    create: create()
+  };
 }());
 
 
