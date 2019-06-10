@@ -21,6 +21,11 @@ function main() {
 }
 
 $(main);
+
+// store.addItem('cheese');
+
+
+
 //main();
 /*
 const itemNames = [ '', 'apples', 'pears' ];

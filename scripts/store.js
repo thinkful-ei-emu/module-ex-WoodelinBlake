@@ -15,10 +15,15 @@ const store = (function(){
     ],
     hideCheckedItems: false,
     searchTerm: '',
-    findByID: function(){
+    findByID: function(id){
+        return this.items.find(object =>  object.id === id);
+    },
 
+    addItem: function(name){
+      const newItem = Item.create(name);
+      this.items.push(newItem);
+      console.log(this.items.push(newItem));
     }
-
 
 
 
